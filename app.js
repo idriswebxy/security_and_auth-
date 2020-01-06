@@ -20,8 +20,7 @@ app.use(
 
 
 // Database 
-mongoose.connect(
-  "mongodb+srv://iman:root123@cluster0-a5nwz.mongodb.net/test?retryWrites=true&w=majority",
+mongoose.connect(process.env.MONGODB,
   {
     useUnifiedTopology: true,
     useNewUrlParser: true
@@ -101,6 +100,6 @@ app.post("/login", (req, res) => {
 
 
 // Port
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server running on port 3000...✅");
 });
